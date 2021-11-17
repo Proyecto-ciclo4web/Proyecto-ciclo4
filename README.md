@@ -14,7 +14,7 @@ Rol:  Desarrollador - Andrew Guissepe Buitrago Huertas - 1193091932,   -  agbuit
 Función: Generar las fuentes para el frontend y el backend
 
 
-Rol: Analista - E gonz
+Rol: Analista - Elias Camargo -10767340 - el4go321@gmail.com
 Función :levantar las necesidades del negocio para convertirlas en requerimientos del sistema.
 
 
