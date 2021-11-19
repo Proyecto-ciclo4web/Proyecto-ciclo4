@@ -12,7 +12,8 @@ const resolversProyecto = {
       })
       return proyectosLider;
 
-    º},
+  },
+
   },
   Mutation: {
     crearProyecto: async (parent, args) => {
@@ -28,7 +29,18 @@ const resolversProyecto = {
       });
       return proyectoCreado;
     },
+
+    CambiarEstadoProyecto: async (parent, args) => {
+      const CambiarEstado =await ProjectModel.findByIdAndUpdate({_id : args.id},{estado:args.estado})
+
+  
+    },
+    CambiarFaseProyecto: async (parent, args) => {
+      const CambiarFase =await ProjectModel.findByIdAndUpdate({_id : args.id},{fase:args.fase})
+    }
   },
+
 };
 
 export { resolversProyecto };
+
