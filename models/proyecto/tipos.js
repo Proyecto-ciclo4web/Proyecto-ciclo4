@@ -41,7 +41,25 @@ const tiposProyecto = gql`
       lider: String!
       objetivos: [crearObjetivo]
     ): Proyecto
+
+  CambiarEstadoProyecto (            
+  id:ID!
+  estado:Enum_EstadoProyecto!) : Proyecto
+
+  CambiarFaseProyecto (
+  id:ID!
+  fase:Enum_FaseProyecto!) : Proyecto
+
+  
+
+
+
+
   }
+  
+
+
+
 `;
 
 export { tiposProyecto };
