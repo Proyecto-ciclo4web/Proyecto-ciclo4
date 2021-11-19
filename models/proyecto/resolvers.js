@@ -3,13 +3,13 @@ import { ProjectModel } from './proyecto.js';
 const resolversProyecto = {
   Query: {
     Proyectos: async (parent, args) => {
-      const proyectos = await ProjectModel.find().populate('avances').populate('inscripciones');
+      const proyectos = await ProjectModel.find().populate('avances').populate('inscripciones').populate('lider');
       return proyectos;
     },
     FiltrarProyectosLider: async (parent, args) => {
       const proyectosLider = await ProjectModel.find({
           lider: args.lider
-      })
+      }).populate('lider')
       return proyectosLider;
 
   },
