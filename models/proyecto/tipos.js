@@ -28,7 +28,9 @@ const tiposProyecto = gql`
 
   type Query {
     Proyectos: [Proyecto]
-    FiltrarProyectosLider(lider:String!):[Proyecto]
+
+
+    Proyecto (_id:ID!):Proyecto
   }
 
   type Mutation {
@@ -50,10 +52,17 @@ const tiposProyecto = gql`
   CambiarFaseProyecto (
   id:ID!
   fase:Enum_FaseProyecto!) : Proyecto
-}
+
+  
+
+
+
+
+  }
+  
+
 
 
 `;
 
 export { tiposProyecto };
-
