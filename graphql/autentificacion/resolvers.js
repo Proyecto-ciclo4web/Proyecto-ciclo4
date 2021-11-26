@@ -21,7 +21,7 @@ Mutation:{
          password:args.password,
         });
         
-        console.log("usuario creado",regitrar);
+        console.log("usuario creado",registrar);
         return "Usuario Creado"
         
        
