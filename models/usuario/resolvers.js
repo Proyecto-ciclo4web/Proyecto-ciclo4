@@ -2,19 +2,28 @@ import { UserModel } from './usuario.js';
 
 const resolversUsuario = {
   Query: {
-    Usuarios: async (parent, args) => {
-      console.log('parent usuario', parent);
-      const usuarios = await UserModel.find();
-      return usuarios;
+
+    Usuarios: async (parent, args, context) => {
+
+
+        const usuarios = await UserModel.find();
+
+        return usuarios;
+    
     },
+
+
+
+
+
     Usuario: async (parent, args) => {
       const usuario = await UserModel.findOne({ _id: args._id });
       return usuario;
     },
-    Estudiantes: async (parent, args)=> {
-      const Estudiantes = await UserModel.find({rol:"ESTUDIANTE"});
+    Estudiantes: async (parent, args) => {
+      const Estudiantes = await UserModel.find({ rol: "ESTUDIANTE" });
       return Estudiantes;
-      
+
     }
   },
   Mutation: {
@@ -56,12 +65,12 @@ const resolversUsuario = {
     },
 
     CambiarEstadoUsuario: async (parent, args) => {
-    const CambiarEstado = await UserModel.findByIdAndUpdate({_id: args._id},{estado: args.estado} )
-    
-    
+      const CambiarEstado = await UserModel.findByIdAndUpdate({ _id: args._id }, { estado: args.estado })
+
+
     }
-   
-  },  
+
+  },
 };
 
 export { resolversUsuario };

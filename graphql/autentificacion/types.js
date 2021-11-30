@@ -4,6 +4,14 @@ import gql from "graphql-tag";
 
 const tiposAutentificacion = gql`
 
+type Token{
+
+token:String
+error:String
+
+}
+
+
 
 type Mutation {
 
@@ -15,7 +23,24 @@ type Mutation {
       rol: Enum_Rol!
       estado: Enum_EstadoUsuario
       password:String!
-    ): String
+    ): Token!
+
+
+    login(
+      correo: String!
+      password:String!
+    ): Token!
+
+
+
+    RefreshTokenn: Token
+
+    
+
+
+
+
+
     }
 
 

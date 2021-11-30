@@ -6,6 +6,12 @@ const resolverInscripciones = {
       const inscripciones = await InscriptionModel.find();
       return inscripciones;
     },
+
+    Inscripcion: async (parent, args) => {
+
+      const inscripcion = await InscriptionModel.find({proyecto : args.proyecto}).populate('estudiante').populate('proyecto');
+      return inscripcion;
+    },
   },
   Mutation: {
     crearInscripcion: async (parent, args) => {
@@ -23,6 +29,9 @@ const resolverInscripciones = {
       });
       return inscripcionAprobada;
     },
+
+
+
   },
 };
 
