@@ -11,6 +11,13 @@ const resolversProyecto = {
       const proyecto = await ProjectModel.findOne( {_id : args._id});
       return proyecto;
     },
+    FiltrarProyectosLider: async (parent, args) => {
+      const proyectosLider = await ProjectModel.find({
+          lider: args.lider
+      }).populate('lider')
+      return proyectosLider;
+
+  },
 
 
 
