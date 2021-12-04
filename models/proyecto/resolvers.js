@@ -44,7 +44,21 @@ const resolversProyecto = {
     },
     CambiarFaseProyecto: async (parent, args) => {
       const CambiarFase =await ProjectModel.findByIdAndUpdate({_id : args.id},{fase:args.fase})
-    }
+    },
+
+    actualizarProyecto
+    : async (parents, args) => {
+      const avanceCreado = ProjectModel.findByIdAndUpdate(args._id,{
+        nombre:args.nombre,
+        objetivos:args.objetivos,
+        presupuesto:args.presupuesto
+       
+      });
+      return avanceCreado;
+    },
+
+
+
   },
 
 };

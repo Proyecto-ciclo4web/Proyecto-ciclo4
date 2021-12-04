@@ -53,7 +53,12 @@ const tiposProyecto = gql`
   id:String!
   fase:Enum_FaseProyecto!) : Proyecto
 
-
+  actualizarProyecto(
+    _id:String!
+    nombre:String!
+    objetivos:crearObjetivo
+    presupuesto:Float!
+    ):Proyecto
   }
   
 
