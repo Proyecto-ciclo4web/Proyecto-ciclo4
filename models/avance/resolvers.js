@@ -31,7 +31,7 @@ const resolversAvance = {
     actualizarDescripcion: async (parents, args) => {
       const avanceCreado = ModeloAvance.findByIdAndUpdate(args._id, {
         descripcion: args.descripcion,
-      });
+      },{new:true});
       return avanceCreado;
     },
   },
