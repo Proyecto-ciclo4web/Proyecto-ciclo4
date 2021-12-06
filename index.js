@@ -25,7 +25,7 @@ const server = new ApolloServer({
   typeDefs: tipos,
   resolvers: resolvers,
   context: ({ req }) => {
-    const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJfaWQiOiI2MWE1NzdlZjAyMTkyYjZjMjE3NzkwMzEiLCJub21icmUiOiJQcnVlYmEyIiwiYXBlbGxpZG8iOiJlIiwiaWRlbnRpZmljYWNpb24iOiIxMzEyMyIsImNvcnJlbyI6InBlcGVAcGVwZS5jb20iLCJyb2wiOiJBRE1JTklTVFJBRE9SIiwiZXN0YWRvIjoiQVVUT1JJWkFETyIsImlhdCI6MTYzODY1NDU5NSwiZXhwIjoxNjM4NzQwOTk1fQ.mhJKcwFCR9H0FYZCiajUxY6lbKiZZmCvNEtOUxAgGS0"
+    const token = req.headers?.authorization ?? null;
 
     if (token) {
       const userData = getUserData(token);
