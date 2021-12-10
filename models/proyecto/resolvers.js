@@ -26,8 +26,8 @@ const resolversProyecto = {
     crearProyecto: async (parent, args) => {
       const proyectoCreado = await ProjectModel.create({
         nombre: args.nombre,
-        estado: args.estado,
-        fase: args.fase,
+        
+
         fechaInicio: args.fechaInicio,
         fechaFin: args.fechaFin,
         presupuesto: args.presupuesto,
@@ -36,6 +36,10 @@ const resolversProyecto = {
       });
       return proyectoCreado;
     },
+
+
+
+    
 
     CambiarEstadoProyecto: async (parent, args) => {
       const CambiarEstado =await ProjectModel.findByIdAndUpdate({_id : args.id},{estado:args.estado})
@@ -62,5 +66,8 @@ const resolversProyecto = {
   },
 
 };
+ {/*eliminados de mut. crear proy
+  estado: args.estado,
+ fase: args.fase, */}
 
 export { resolversProyecto };

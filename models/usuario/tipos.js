@@ -18,6 +18,7 @@ const tiposUsuario = gql`
     identificacion: String
     correo: String
     rol: Enum_Rol
+    estado: Enum_EstadoUsuario
   }
 
   type Query {

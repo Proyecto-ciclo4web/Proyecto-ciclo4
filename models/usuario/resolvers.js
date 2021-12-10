@@ -6,7 +6,7 @@ const resolversUsuario = {
     Usuarios: async (parent, args, context) => {
 
         console.log(args);
-        const usuarios = await UserModel.find({});
+        const usuarios = await UserModel.find({...args.filtro});
 
         return usuarios;
     

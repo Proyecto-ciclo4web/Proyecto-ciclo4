@@ -22,16 +22,16 @@ const projectSchema = new Schema(
       required: true,
     },
     presupuesto: {
-      type: String,
+      type: Number,
       required: true,
     },
     fechaInicio: {
-      type: String,
+      type: Date,
       default: '0/0/0',
 
     },
     fechaFin: {
-      type: String,
+      type: Date,
       default: '0/0/0',
 
     },

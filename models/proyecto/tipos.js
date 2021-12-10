@@ -15,7 +15,7 @@ const tiposProyecto = gql`
   type Proyecto {
     _id: ID!
     nombre: String!
-    presupuesto: String!
+    presupuesto: Float!
     fechaInicio: Date!
     fechaFin: Date!
     estado: Enum_EstadoProyecto!
@@ -36,11 +36,9 @@ const tiposProyecto = gql`
   type Mutation {
     crearProyecto(
       nombre: String!
-      presupuesto: String!
-      fechaInicio: String
-      fechaFin: String
-      estado: Enum_EstadoProyecto
-      fase: Enum_FaseProyecto
+      presupuesto: Float!
+      fechaInicio: Date!
+      fechaFin: Date!
       lider: String!
       objetivos: [crearObjetivo]
     ): Proyecto
@@ -65,5 +63,11 @@ const tiposProyecto = gql`
 
 
 `;
+
+  {/*
+    elim de tipo proyecto -se crean autom..
+    estado: Enum_EstadoProyecto
+    fase: Enum_FaseProyecto 
+  */}
 
 export { tiposProyecto };
