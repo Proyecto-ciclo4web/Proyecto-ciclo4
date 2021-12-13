@@ -14,7 +14,9 @@ const tiposInscripcion = gql`
     Inscripciones: [Inscripcion]
     Inscripcion1(_id:String!):Inscripcion
     Inscripcion(proyecto:String!):[Inscripcion]
-    
+    InscripcionEstudiante(estudiante:String!, estado:Enum_EstadoInscripcion):[Inscripcion]
+    verObjetivosIns(proyecto:String!):[Inscripcion]
+
   }
 
   type Mutation {

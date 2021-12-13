@@ -18,6 +18,7 @@ const tiposAvance = gql`
   type Mutation {
     crearAvance(fecha: Date!, descripcion: String!, proyecto: String!, creadoPor: String!): Avance
     AgregarObservacion(_id:String!,observacion:String!): Avance
+    editarAvance(_id:String!, descripcion:String!):Avance
   }
 `;
 

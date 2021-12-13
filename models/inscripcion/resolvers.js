@@ -17,6 +17,14 @@ const resolverInscripciones = {
       const inscripcion = await InscriptionModel.findOne({_id : args._id}).populate('estudiante').populate('proyecto');
       return inscripcion;
     },
+    InscripcionEstudiante: async (parent, args) => {
+      const inscripcionEst = await InscriptionModel.find({estudiante : args.estudiante, estado: "ACEPTADO"}).populate('proyecto').populate('estudiante')
+      return inscripcionEst;
+    },
+    verObjetivosIns: async (parent, args) => {
+      const verObjetivos = await InscriptionModel.findOne({proyecto: args.proyecto}).populate('proyecto')
+      return verObjetivos
+    },
   },
   Mutation: {
     crearInscripcion: async (parent, args) => {

@@ -40,11 +40,14 @@ const resolversAvance = {
         observacion:args.observacion
       })
       return usuarioEditado
-
-
-
-
   },
+
+  editarAvance: async (parent, args) => {
+    const avanceEditado = await ModeloAvance.findByIdAndUpdate({_id:args._id},{
+      descripcion:args.descripcion
+    })
+    return avanceEditado
+  }
 },
 }
 export { resolversAvance };
