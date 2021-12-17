@@ -55,7 +55,7 @@ const tiposProyecto = gql`
   fase:Enum_FaseProyecto!) : Proyecto
   
 
-
+}
 
 
 
