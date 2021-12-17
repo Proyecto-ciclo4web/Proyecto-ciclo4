@@ -46,6 +46,6 @@ const resolversProyecto = {
       const CambiarFase =await ProjectModel.findByIdAndUpdate({_id : args.id},{fase:args.fase})
     },
     
-};
+}
 
 export { resolversProyecto };
