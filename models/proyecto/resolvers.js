@@ -47,5 +47,6 @@ const resolversProyecto = {
     },
     
 }
+}
 
 export { resolversProyecto };
