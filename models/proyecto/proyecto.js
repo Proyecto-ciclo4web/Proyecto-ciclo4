@@ -21,20 +21,18 @@ const projectSchema = new Schema(
       type: String,
       required: true,
     },
-    presupuesto: {
-      type: String,
-      required: true,
-    },
-    fechaInicio: {
-      type: String,
-      default: '0/0/0',
-
-    },
-    fechaFin: {
-      type: String,
-      default: '0/0/0',
-
-    },
+  presupuesto: {
+    type: Number,
+    required: true,
+  },
+  fechaInicio: {
+    type: Date,
+    required: true,
+  },
+  fechaFin: {
+    type: Date,
+    required: true,
+  },
     estado: {
       type: String,
       enum: ['ACTIVO', 'INACTIVO'],
